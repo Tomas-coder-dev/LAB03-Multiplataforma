@@ -1,0 +1,46 @@
+mixin Vehiculo {
+  void volar() {
+    print("Estoy volando...");
+  }
+
+  void navegar() {
+    print("Estoy navegando...");
+  }
+
+  void acelerar() {
+    print("Estoy acelerando...");
+  }
+}
+
+class Avion with Vehiculo {
+  void mostrar() {
+    print("Soy un avión");
+    super.volar();
+    super.acelerar();
+  }
+}
+
+class Bote with Vehiculo {
+  void mostrar() {
+    print("Soy un bote.");
+    super.navegar();
+    super.acelerar();
+  }
+}
+
+class Auto with Vehiculo {
+  void mostrar() {
+    print("Soy un auto.");
+    super.acelerar();
+  }
+}
+
+void main() {
+  var avion = Avion();
+  avion.mostrar();
+
+  var bote = Bote();
+  bote.mostrar();
+  var auto = Auto();
+  auto.mostrar();
+}
