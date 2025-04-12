@@ -1,0 +1,46 @@
+mixin Personaje {
+  void lanzarhechizo() {
+    print("Estoy lanzado hechizo...");
+  }
+
+  void atacarconarma() {
+    print("Estoy atacando con armas...");
+  }
+
+  void curar() {
+    print("Estoy curandolos...");
+  }
+}
+
+class Mago with Personaje {
+  void mostrar() {
+    print("Soy un Mago");
+    super.lanzarhechizo();
+    super.curar();
+  }
+}
+
+class Guerrero with Personaje {
+  void mostrar() {
+    print("Soy un guerero.");
+    super.atacarconarma();
+  }
+}
+
+class Paladin with Personaje {
+  void mostrar() {
+    print("Soy un Paladin.");
+    super.atacarconarma();
+    super.curar();
+  }
+}
+
+void main() {
+  var mago = Mago();
+  mago.mostrar();
+
+  var guerrero = Guerrero();
+  guerrero.mostrar();
+  var paladin = Paladin();
+  paladin.mostrar();
+}
